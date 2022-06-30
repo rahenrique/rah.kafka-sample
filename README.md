@@ -13,7 +13,7 @@ Antes de iniciar, você irá precisar das seguintes ferramentas instaladas em su
 
 ```bash
 # Clone this repository
-$ git clone https://github.com/rahenrique/rah.kafka-tutorial.git
+$ git clone https://github.com/rahenrique/rah.kafka-sample.git
 
 # Run the application
 $ docker-compose up
