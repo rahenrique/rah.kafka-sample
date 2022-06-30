@@ -1,4 +1,3 @@
-import asyncio
 import json
 import logging
 import os
@@ -21,9 +20,8 @@ log = logging.getLogger(__name__)
 app = FastAPI(title="FastAPI - Message Consumer")
 
 
-@app.get("/")
-async def healthcheck():
-    return {"message": "I'm a message consumer!"}
+def deserializer(serialized):
+    return json.loads(serialized)
 
 
 @app.get("/receive")
@@ -31,22 +29,20 @@ async def consume_message():
     consumer = AIOKafkaConsumer(
         KAFKA_TOPIC,
         bootstrap_servers=KAFKA_BOOTSTRAP_SERVERS,
+        value_deserializer=deserializer,
         group_id=KAFKA_CONSUMER_GROUP,
         auto_offset_reset='earliest',
         enable_auto_commit=False
     )
-    messages = list()
 
     await consumer.start()
     
-    # TODO: receive more messages and close the connection
-    for _ in range(3):
-        msg = await consumer.getone()
-
-        log.info(f"Receiving message #{msg.key}")
-        formatted_message = "{}:{:d}:{:d}: key={} value={} timestamp_ms={}".format(msg.topic, msg.partition, msg.offset, msg.key, msg.value, msg.timestamp)
-        
-        messages.append(formatted_message)
+    messages = list()
+    
+    data = await consumer.getmany(timeout_ms=1000)
+    for topic, items in data.items():
+        for msg in items:
+            messages.append(msg)
     
     await consumer.commit()
     await consumer.stop()
