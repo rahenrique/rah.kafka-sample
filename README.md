@@ -19,7 +19,7 @@ $ git clone https://github.com/rahenrique/rah.kafka-sample.git
 $ docker-compose up
 ```
 
-Ist'irá criar duas aplicações FastAPI, uma atuando como produtora, e outra atuando como consumidora de mensagens. Ambas podem ser acessadas pelos seus endpoints via requisições REST. Além disso, serão criados mais dois containers: Kafka e Zookeeper. 
+Isto irá criar duas aplicações FastAPI, uma atuando como produtora, e outra atuando como consumidora de mensagens. Ambas podem ser acessadas pelos seus endpoints via requisições REST. Além disso, serão criados mais dois containers: Kafka e Zookeeper. 
 
 Para acessar cada uma das aplicações FastAPI:
 * Producer: <http://localhost:7000/docs/>
