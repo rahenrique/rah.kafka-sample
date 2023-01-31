@@ -15,6 +15,9 @@ Antes de iniciar, você irá precisar das seguintes ferramentas instaladas em su
 # Clone this repository
 $ git clone https://github.com/rahenrique/rah.kafka-sample.git
 
+# Enter into the new directory
+cd rah.kafka-sample
+
 # Run the application
 $ docker-compose up
 ```
