@@ -1,6 +1,6 @@
 # FastAPI with Kafka Sample
 
-Este projeto é uma demonstração de como utilizar **Kafka** como message broker com uma API web em **FlaskAPI**. Este repositório tem como objetivo ser um ponto de partida para um ambiente de desenvolvimento local.
+Este projeto é uma demonstração de como utilizar **Kafka** como message broker com uma API web em **FastAPI**. Este repositório tem como objetivo ser um ponto de partida para um ambiente de desenvolvimento local.
 
 ## Pré requisitos
 
