@@ -27,3 +27,4 @@ Isto irá criar duas aplicações FastAPI, uma atuando como produtora, e outra a
 Para acessar cada uma das aplicações FastAPI:
 * Producer: <http://localhost:7000/docs/>
 * Consumer: <http://localhost:8000/docs/>
+Os links acima são documentações interativas OpenAPI
